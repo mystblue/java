@@ -4,7 +4,7 @@ public class Sort implements java.util.Comparator {
 	public int stringCompare(String str1, String str2) {
 		int len1 = str1.length();
 		int len2 = str2.length();
-		int min = len1 >= len2 ? len1 : len2;
+		int min = len1 >= len2 ? len2 : len1;
 
 		for (int i = 0; i < min; i++) {
 			char c1 = str1.charAt(i);

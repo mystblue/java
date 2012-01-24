@@ -32,6 +32,8 @@ public class SortTest extends TestCase {
 		assertEquals(-1, sort.compare("-.jpg", "1.jpg"));
 		assertEquals(-1, sort.compare("001.jpg", "01.jpg"));
 		assertEquals(-1, sort.compare("001.jpg", "a001.jpg"));
+		assertEquals(-1, sort.compare("00001.jpg", "001.jpg"));
+		assertEquals(-1, sort.compare("001-256.jpg", "001.jpg"));
 	}
 
 	public void testArray1() {
