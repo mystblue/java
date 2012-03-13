@@ -1,0 +1,1 @@
+jar cvmf manifest.mf ZipCompress.jar *.class org META-INF
