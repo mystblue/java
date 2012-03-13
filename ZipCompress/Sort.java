@@ -1,6 +1,6 @@
 import java.io.File;
 
-public class Sort implements java.util.Comparator {
+public class Sort implements java.util.Comparator<Object> {
 	public int stringCompare(String str1, String str2) {
 		int len1 = str1.length();
 		int len2 = str2.length();
@@ -46,6 +46,13 @@ public class Sort implements java.util.Comparator {
 				}
 				if (!isSymbol(c1) && isSymbol(c2)) {
 					return 1;
+				}
+				if (c1 == c2) {
+					return 0;
+				} else if (c1 > c2) {
+					return 1;
+				} else {
+					return -1;
 				}
 			}
 		}
