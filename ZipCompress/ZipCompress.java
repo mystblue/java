@@ -1,11 +1,11 @@
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.InputStream;
-import java.io.IOException;
 import java.io.BufferedInputStream;
 import java.util.ArrayList;
 import java.util.Collections;
+
+import javax.swing.JOptionPane;
 
 import org.apache.commons.compress.archivers.zip.ZipArchiveEntry;
 import org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream;
@@ -20,6 +20,8 @@ public class ZipCompress {
 				compress(f.getName() + ".zip", f.getName());
 			}
 		}
+		JOptionPane.showMessageDialog(null, "èàóùÇ™èIóπÇµÇ‹ÇµÇΩÅB", "äÆóπ",
+				JOptionPane.INFORMATION_MESSAGE);
 	}
 
 	public static void compress(String zipFilename, String folderName) {
