@@ -34,15 +34,17 @@ public class SortTest extends TestCase {
 		assertEquals(-1, sort.compare("001.jpg", "a001.jpg"));
 		assertEquals(-1, sort.compare("00001.jpg", "001.jpg"));
 		assertEquals(-1, sort.compare("001-256.jpg", "001.jpg"));
+		assertEquals(1, sort.compare("SCAN_A0001C.jpg", "SCAN_A0001A1.jpg"));
 	}
 
 	public void testArray1() {
-		ArrayList list = new ArrayList();
+		ArrayList<String> list = new ArrayList<String>();
 		list.add("88.txt");
 		list.add("5.txt");
 		list.add("11.txt");
 
-		ArrayList result = (ArrayList)list.clone();
+		@SuppressWarnings("unchecked")
+		ArrayList<String> result = (ArrayList<String>)list.clone();
 		Collections.sort(result, new Sort());
 		assertEquals("5.txt", result.get(0));
 		assertEquals("11.txt", result.get(1));
@@ -51,7 +53,7 @@ public class SortTest extends TestCase {
 	}
 
 	public void testArray2() {
-		ArrayList list = new ArrayList();
+		ArrayList<String> list = new ArrayList<String>();
 		list.add("Ie5");
 		list.add("Ie6");
 		list.add("Ie4_01");
@@ -59,7 +61,8 @@ public class SortTest extends TestCase {
 		list.add("Ie4_128");
 		list.add("Ie501sp2");
 
-		ArrayList result = (ArrayList)list.clone();
+		@SuppressWarnings("unchecked")
+		ArrayList<String> result = (ArrayList<String>)list.clone();
 		Collections.sort(result, new Sort());
 		assertEquals("Ie4_01", result.get(0));
 		assertEquals("Ie4_128", result.get(1));
